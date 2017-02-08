@@ -21,7 +21,7 @@ hexchat.hook_command('RESPOON', function (args, args_eol)
 	end
 	if #badchars > 0 then
 		hexchat.print("Illegal character !")
-	elseif args[2] == 'ADD' then
+	elseif string.upper(args[2]) == 'ADD' then
 		if #args == 5 then
 			local id = 1
 			while hexchat.pluginprefs[id] ~= nil do
@@ -32,21 +32,21 @@ hexchat.hook_command('RESPOON', function (args, args_eol)
 		else
 			hexchat.print("Usage : RESPOON ADD <message> {*|#<channel>} <response>")
 		end
-	elseif args[2] == 'DEL' then
+	elseif string.upper(args[2]) == 'DEL' then
 		if #args == 3 then
 			hexchat.pluginprefs[tonumber(args[3])] = nil
 			hexchat.print("Respoon removed (id "..args[3]..")")
 		else
 			hexchat.print("Usage : RESPOON DEL <ID>")
 		end
-	elseif args[2] == 'EDIT' then
+	elseif string.upper(args[2]) == 'EDIT' then
 		if #args == 6 then
 			hexchat.pluginprefs[tonumber(args[3])] = args[4].."\x01"..args[5].."\x01"..args[6]
 			hexchat.print("Respoon edited (id "..args[3]..")")
 		else
 			hexchat.print("Usage : RESPOON EDIT <ID> <message> {*|#<channel>} <response>")
 		end
-	elseif args[2] == 'LIST' then
+	elseif string.upper(args[2]) == 'LIST' then
 		if #args == 2 then
 			PrintList(hexchat.pluginprefs)
 		else
