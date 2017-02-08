@@ -14,3 +14,13 @@ Edit an automatic reponse :
 
 List all automatic reponses :
 `/RESPOON LIST`
+
+## Examples
+
+`/RESPOON ADD Hello #mychannel Welcome`
+
+`/RESPOON ADD "Who wants a muffin ?" * "Me !"`
+
+`/RESPOON EDIT 2 "Who wants a muffin ?" * "Not anymore !"`
+
+`/RESPOON DEL 1`
