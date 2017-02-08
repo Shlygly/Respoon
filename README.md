@@ -10,7 +10,7 @@ Remove an automatic response :
 `/RESPOON DEL <ID>`
 
 Edit an automatic reponse :
-`/RESPOON EDIT <ID> <message> {*|#<channel>|:<user>} <response>`
+`/RESPOON EDIT <ID> <message> {*|#<channel>} <response>`
 
 List all automatic reponses :
 `/RESPOON LIST`
