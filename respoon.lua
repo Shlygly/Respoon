@@ -44,7 +44,7 @@ hexchat.hook_command('RESPOON', function (args, args_eol)
 			hexchat.pluginprefs[tonumber(args[3])] = args[4].."\x01"..args[5].."\x01"..args[6]
 			hexchat.print("Respoon edited (id "..args[3]..")")
 		else
-			hexchat.print("Usage : RESPOON EDIT <ID> <message> {*|#<channel>|:<user>} <response>")
+			hexchat.print("Usage : RESPOON EDIT <ID> <message> {*|#<channel>} <response>")
 		end
 	elseif args[2] == 'LIST' then
 		if #args == 2 then
