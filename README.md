@@ -19,14 +19,14 @@ Remove an automatic reponses :
 `/RESPOON DELETE <name>`
 
 
-Property <trigger> is in regex format. Keep double-quote around if the regex contains spaces.
+Property `<trigger>` is in regex format. Keep double-quote around if the regex contains spaces.
 
-You can use those escape sequences in the <action> property :
+You can use those escape sequences in the `<action>` property :
 * {user} : the nick of the user
 * {message} : the full message that has been sent
 * {server} : the server where the message has been sent
 * {channel} : the channel where the message has been sent
-* {params[x]} : the match of your regex at index 'x'
+* {params\[x\]} : the match of your regex at index 'x'
 			
 ## Examples
 
