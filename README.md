@@ -4,23 +4,36 @@ Automatic response manager addon for Hexchat
 ## Usage
 
 Add an automatic response :
-`/RESPOON ADD <message> {*|#<channel>} <response>`
+`/RESPOON ADD <name> <server> <channel> "<trigger>" MSG|CMD <action>`
 
-Remove an automatic response :
-`/RESPOON DEL <ID>`
-
-Edit an automatic reponse :
-`/RESPOON EDIT <ID> <message> {*|#<channel>} <response>`
-
-List all automatic reponses :
+List every automatic responses :
 `/RESPOON LIST`
 
+Show properties of a specific response :
+`/RESPOON SHOW <name>`
+
+Edit an automatic reponse :
+`/RESPOON EDIT <name> <server> <channel> "<trigger>" MSG|CMD <action>`
+
+Remove an automatic reponses :
+`/RESPOON DELETE <name>`
+
+
+Property <trigger> is in regex format. Keep double-quote around if the regex contains spaces.
+
+You can use those escape sequences in the <action> property :
+* {user} : the nick of the user
+* {message} : the full message that has been sent
+* {server} : the server where the message has been sent
+* {channel} : the channel where the message has been sent
+* {params[x]} : the match of your regex at index 'x'
+			
 ## Examples
 
-`/RESPOON ADD Hello #mychannel Welcome`
+`/RESPOON ADD hello_resp *.worldnet.net #mychannel ^Hello.+$ MSG Welcome {user} !`
 
-`/RESPOON ADD "Who wants a muffin ?" * "Me !"`
+`/RESPOON ADD eat_muffin * * "^Who wants a muffin ?$" CMD ME eat the muffin !`
 
-`/RESPOON EDIT 2 "Who wants a muffin ?" * "Not anymore !"`
+`/RESPOON EDIT eat_muffin * * "^Who wants a (.+) ?$" CMD ME eat the {params[0]} !`
 
-`/RESPOON DEL 1`
+`/RESPOON DEL eat_muffin`
