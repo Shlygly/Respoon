@@ -36,4 +36,4 @@ You can use those escape sequences in the `<action>` property :
 
 `/RESPOON EDIT eat_muffin * * "^Who wants a (.+) ?$" CMD ME eat the {params[0]} !`
 
-`/RESPOON DEL eat_muffin`
+`/RESPOON DELETE eat_muffin`
