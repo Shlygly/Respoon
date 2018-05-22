@@ -88,7 +88,7 @@ def msg_cmd(word, word_eol, userdata):
     context = hexchat.get_context()
     for respoon in respoon_list:
         if respoon.checkOrigin(context.get_info("server"), context.get_info("channel")):
-            params = respoon.checkTrigger(word_eol[1])
+            params = respoon.checkTrigger(word[1])
             if len(params) > 0:
                 respoon.performAction(context, word[0], word[1], params)
 
